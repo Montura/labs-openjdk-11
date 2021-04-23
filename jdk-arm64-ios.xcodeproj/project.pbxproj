@@ -674,7 +674,7 @@
 		5A11F7052615ED8300E59D56 /* Adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Adler32.c; sourceTree = "<group>"; };
 		5A11F7082615ED8300E59D56 /* nio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nio.h; sourceTree = "<group>"; };
 		5A11F7092615ED8300E59D56 /* nio_util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nio_util.c; sourceTree = "<group>"; };
-		5A9C16942631A79E002DF619 /* jdk-x86-64-ios-simulator-d.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "jdk-x86-64-ios-simulator-d.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A9C16942631A79E002DF619 /* jdk-11-x86_64-ios-sim-d.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "jdk-11-x86_64-ios-sim-d.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADB99B625B7219B00B42097 /* jdk-11-arm64-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "jdk-11-arm64-ios.a"; path = "jdk-11-arm64-ios-d.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1298,7 +1298,7 @@
 			isa = PBXGroup;
 			children = (
 				5ADB99B625B7219B00B42097 /* jdk-11-arm64-ios.a */,
-				5A9C16942631A79E002DF619 /* jdk-x86-64-ios-simulator-d.a */,
+				5A9C16942631A79E002DF619 /* jdk-11-x86_64-ios-sim-d.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1320,7 +1320,7 @@
 			);
 			name = "jdk-x86-64-ios-simulator";
 			productName = "scene-graph-graal";
-			productReference = 5A9C16942631A79E002DF619 /* jdk-x86-64-ios-simulator-d.a */;
+			productReference = 5A9C16942631A79E002DF619 /* jdk-11-x86_64-ios-sim-d.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		5ADB99B525B7219B00B42097 /* jdk-arm64-ios */ = {
@@ -1852,7 +1852,7 @@
 				MTL_FAST_MATH = YES;
 				OBJROOT = "$(SYMROOT)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)-d";
+				PRODUCT_NAME = "jdk-11-x86_64-ios-sim-d";
 				SDKROOT = iphoneos;
 				SHARED_PRECOMPS_DIR = "${PROJECT_DIR}/xcode/SharedPrecompiledHeaders";
 				SKIP_INSTALL = NO;
@@ -1939,7 +1939,7 @@
 				MTL_FAST_MATH = YES;
 				OBJROOT = "$(SYMROOT)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)-r";
+				PRODUCT_NAME = "jdk-11-x86_64-ios-sim-r";
 				SDKROOT = iphoneos;
 				SHARED_PRECOMPS_DIR = "${PROJECT_DIR}/xcode/SharedPrecompiledHeaders";
 				SKIP_INSTALL = NO;
