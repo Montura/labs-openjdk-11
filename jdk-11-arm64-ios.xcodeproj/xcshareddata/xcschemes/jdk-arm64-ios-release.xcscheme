@@ -15,15 +15,15 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5ADB99B525B7219B00B42097"
-               BuildableName = "jdk-11-arm64-ios.a"
-               BlueprintName = "jdk-arm64-ios"
-               ReferencedContainer = "container:jdk-arm64-ios.xcodeproj">
+               BuildableName = "jdk-11-arm64-ios-d.a"
+               BlueprintName = "jdk-11-arm64-ios"
+               ReferencedContainer = "container:jdk-11-arm64-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -31,7 +31,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -42,7 +42,7 @@
       allowLocationSimulation = "YES">
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -51,17 +51,17 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5ADB99B525B7219B00B42097"
-            BuildableName = "jdk-11-arm64-ios.a"
-            BlueprintName = "jdk-arm64-ios"
-            ReferencedContainer = "container:jdk-arm64-ios.xcodeproj">
+            BuildableName = "jdk-11-arm64-ios-d.a"
+            BlueprintName = "jdk-11-arm64-ios"
+            ReferencedContainer = "container:jdk-11-arm64-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Release">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
