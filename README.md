@@ -35,3 +35,9 @@ You can verify the labsjdk build with:
 
 The original JDK README is [here](README).
 Further information on building JDK 11 is [here](doc/building.md).
+
+iOS static libraries build instructions:
+   - build jdk normally for MacOS
+   - open jdk-arm64-ios.xcodeproj in the XCode and press build button or
+   - build the jdk-arm64-ios.xcodeproj project form commandline with xcbuild ...
+ 
