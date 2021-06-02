@@ -674,8 +674,8 @@
 		5A11F7052615ED8300E59D56 /* Adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Adler32.c; sourceTree = "<group>"; };
 		5A11F7082615ED8300E59D56 /* nio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nio.h; sourceTree = "<group>"; };
 		5A11F7092615ED8300E59D56 /* nio_util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nio_util.c; sourceTree = "<group>"; };
-		5A9C16942631A79E002DF619 /* jdk-11-x86_64-ios-simulator-d.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "jdk-11-x86_64-ios-simulator-d.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ADB99B625B7219B00B42097 /* jdk-11-arm64-ios-d.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "jdk-11-arm64-ios-d.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A9C16942631A79E002DF619 /* jdk-11-x86-64-ios-simulator-jvmci-21.1-d.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "jdk-11-x86-64-ios-simulator-jvmci-21.1-d.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ADB99B625B7219B00B42097 /* jdk-11-arm64-ios-jvmci-21.1-d.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "jdk-11-arm64-ios-jvmci-21.1-d.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1297,8 +1297,8 @@
 		5ADB99B725B7219B00B42097 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5ADB99B625B7219B00B42097 /* jdk-11-arm64-ios-d.a */,
-				5A9C16942631A79E002DF619 /* jdk-11-x86_64-ios-simulator-d.a */,
+				5ADB99B625B7219B00B42097 /* jdk-11-arm64-ios-jvmci-21.1-d.a */,
+				5A9C16942631A79E002DF619 /* jdk-11-x86-64-ios-simulator-jvmci-21.1-d.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1306,9 +1306,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5A9C15C82631A79E002DF619 /* jdk-11-x86_64-ios-simulator */ = {
+		5A9C15C82631A79E002DF619 /* jdk-11-x86-64-ios-simulator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A9C16912631A79E002DF619 /* Build configuration list for PBXNativeTarget "jdk-11-x86_64-ios-simulator" */;
+			buildConfigurationList = 5A9C16912631A79E002DF619 /* Build configuration list for PBXNativeTarget "jdk-11-x86-64-ios-simulator" */;
 			buildPhases = (
 				5A9C15C92631A79E002DF619 /* Sources */,
 				5A9C168C2631A79E002DF619 /* Frameworks */,
@@ -1318,9 +1318,9 @@
 			);
 			dependencies = (
 			);
-			name = "jdk-11-x86_64-ios-simulator";
+			name = "jdk-11-x86-64-ios-simulator";
 			productName = "scene-graph-graal";
-			productReference = 5A9C16942631A79E002DF619 /* jdk-11-x86_64-ios-simulator-d.a */;
+			productReference = 5A9C16942631A79E002DF619 /* jdk-11-x86-64-ios-simulator-jvmci-21.1-d.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		5ADB99B525B7219B00B42097 /* jdk-11-arm64-ios */ = {
@@ -1337,7 +1337,7 @@
 			);
 			name = "jdk-11-arm64-ios";
 			productName = "scene-graph-graal";
-			productReference = 5ADB99B625B7219B00B42097 /* jdk-11-arm64-ios-d.a */;
+			productReference = 5ADB99B625B7219B00B42097 /* jdk-11-arm64-ios-jvmci-21.1-d.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -1367,7 +1367,7 @@
 			projectRoot = "";
 			targets = (
 				5ADB99B525B7219B00B42097 /* jdk-11-arm64-ios */,
-				5A9C15C82631A79E002DF619 /* jdk-11-x86_64-ios-simulator */,
+				5A9C15C82631A79E002DF619 /* jdk-11-x86-64-ios-simulator */,
 			);
 		};
 /* End PBXProject section */
@@ -1853,7 +1853,7 @@
 				MTL_FAST_MATH = YES;
 				OBJROOT = "$(SYMROOT)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)-d";
+				PRODUCT_NAME = "$(TARGET_NAME)-$(JVMCI_VERSION)-d";
 				SDKROOT = iphoneos;
 				SHARED_PRECOMPS_DIR = "${PROJECT_DIR}/xcode/SharedPrecompiledHeaders";
 				SKIP_INSTALL = NO;
@@ -1941,7 +1941,7 @@
 				MTL_FAST_MATH = YES;
 				OBJROOT = "$(SYMROOT)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)-r";
+				PRODUCT_NAME = "$(TARGET_NAME)-$(JVMCI_VERSION)-r";
 				SDKROOT = iphoneos;
 				SHARED_PRECOMPS_DIR = "${PROJECT_DIR}/xcode/SharedPrecompiledHeaders";
 				SKIP_INSTALL = NO;
@@ -1969,6 +1969,7 @@
 					NSS_ECC_MORE_THAN_SUITE_B,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				JVMCI_VERSION = "jvmci-21.1";
 				OBJROOT = "$(PROJECT_DIR)/xcode";
 				SDKROOT = iphoneos;
 				SHARED_PRECOMPS_DIR = "$(PROJECT_DIR)/xcode/SharedPrecompiledHeaders";
@@ -1988,6 +1989,7 @@
 					NSS_ECC_MORE_THAN_SUITE_B,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				JVMCI_VERSION = "jvmci-21.1";
 				OBJROOT = "$(PROJECT_DIR)/xcode";
 				SDKROOT = iphoneos;
 				SHARED_PRECOMPS_DIR = "$(PROJECT_DIR)/xcode/SharedPrecompiledHeaders";
@@ -2069,7 +2071,7 @@
 				MTL_FAST_MATH = YES;
 				OBJROOT = "$(SYMROOT)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)-d";
+				PRODUCT_NAME = "$(TARGET_NAME)-$(JVMCI_VERSION)-d";
 				SDKROOT = iphoneos;
 				SHARED_PRECOMPS_DIR = "${PROJECT_DIR}/xcode/SharedPrecompiledHeaders";
 				SKIP_INSTALL = NO;
@@ -2156,7 +2158,7 @@
 				MTL_FAST_MATH = YES;
 				OBJROOT = "$(SYMROOT)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)-r";
+				PRODUCT_NAME = "$(TARGET_NAME)-$(JVMCI_VERSION)-r";
 				SDKROOT = iphoneos;
 				SHARED_PRECOMPS_DIR = "${PROJECT_DIR}/xcode/SharedPrecompiledHeaders";
 				SKIP_INSTALL = NO;
@@ -2175,7 +2177,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5A9C16912631A79E002DF619 /* Build configuration list for PBXNativeTarget "jdk-11-x86_64-ios-simulator" */ = {
+		5A9C16912631A79E002DF619 /* Build configuration list for PBXNativeTarget "jdk-11-x86-64-ios-simulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5A9C16922631A79E002DF619 /* Debug */,
