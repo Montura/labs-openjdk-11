@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5A9C15C82631A79E002DF619"
-               BuildableName = "jdk-11-x86_64-ios-simulator-d.a"
-               BlueprintName = "jdk-11-x86_64-ios-simulator"
+               BuildableName = "jdk-11-x86-64-ios-simulator-d.a"
+               BlueprintName = "jdk-11-x86-64-ios-simulator"
                ReferencedContainer = "container:jdk-11-arm64-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
