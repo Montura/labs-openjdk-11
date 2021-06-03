@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5ADB99B525B7219B00B42097"
-               BuildableName = "jdk-11-arm64-ios-jvmci-21.1-d.a"
-               BlueprintName = "jdk-11-arm64-ios"
+               BuildableName = "jdk-arm64-ios-jvmci-21.1-d.a"
+               BlueprintName = "jdk-arm64-ios"
                ReferencedContainer = "container:jdk-11-arm64-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -51,8 +51,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5ADB99B525B7219B00B42097"
-            BuildableName = "jdk-11-arm64-ios-jvmci-21.1-d.a"
-            BlueprintName = "jdk-11-arm64-ios"
+            BuildableName = "jdk-arm64-ios-jvmci-21.1-d.a"
+            BlueprintName = "jdk-arm64-ios"
             ReferencedContainer = "container:jdk-11-arm64-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
