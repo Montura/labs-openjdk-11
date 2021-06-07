@@ -261,6 +261,7 @@ def main():
     parser.add_argument('--jdk-debug-level', action='store', help='value for --with-debug-level JDK config option', default='release', choices=['release', 'fastdebug','slowdebug'])
     parser.add_argument('--devkit', action='store', help='value for --with-devkit configure option', default=env.get('DEVKIT', ''), metavar='<path>')
     parser.add_argument('--jvmci-version', action='store', help='JVMCI version (e.g., 19.3-b03)', metavar='<version>')
+    parser.add_argument('--configure-only', action='store_true', help='only run configuration, do not make')
     
     extra_config = parser.add_mutually_exclusive_group()
     extra_config.add_argument('--configure-options', action='store', help='File containing extra options for configure script, one option per line', metavar='<path>')
@@ -331,6 +332,9 @@ def main():
         configure_options.extend(opts.configure_option)
 
     check_call(["sh", "configure"] + configure_options, cwd=jdk_src_dir)
+    if opts.configure_only:
+        return
+
     check_call([opts.make, "LOG=info", "CONF=" + conf_name, "product-bundles", "static-libs-bundles"], cwd=jdk_src_dir)
 
     bundles_dir = join(build_dir, conf_name, 'bundles')
