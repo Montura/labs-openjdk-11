@@ -37,7 +37,11 @@ The original JDK README is [here](README).
 Further information on building JDK 11 is [here](doc/building.md).
 
 iOS static libraries build instructions:
-   - build jdk normally for MacOS
+   - generate required headers by running the following command on MacOS:
+      ```bash
+      python build_labsjdk.py --configure-only
+      make java.base-libs jdk.crypto.ec-libs
+      ```
    - open jdk-arm64-ios.xcodeproj in the XCode and press build button or
    - build the jdk-arm64-ios.xcodeproj project form commandline with xcbuild ...
  
