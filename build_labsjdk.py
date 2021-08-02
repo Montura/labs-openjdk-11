@@ -262,7 +262,7 @@ def main():
     parser.add_argument('--devkit', action='store', help='value for --with-devkit configure option', default=env.get('DEVKIT', ''), metavar='<path>')
     parser.add_argument('--jvmci-version', action='store', help='JVMCI version (e.g., 19.3-b03)', metavar='<version>')
     parser.add_argument('--configure-only', action='store_true', help='only run configuration, do not make')
-    
+
     extra_config = parser.add_mutually_exclusive_group()
     extra_config.add_argument('--configure-options', action='store', help='File containing extra options for configure script, one option per line', metavar='<path>')
     extra_config.add_argument('--configure-option', action='append', help='Extra option appended to configure script', metavar='<path>')
