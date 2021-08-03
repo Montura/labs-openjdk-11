@@ -1832,7 +1832,7 @@
 					"$(inherited)",
 					"ARCHPROPNAME='\"x86_64\"'",
 				);
-				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx11.1]" = (
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx*]" = (
 					"$(inherited)",
 					"ARCHPROPNAME='\"x86_64\"'",
 				);
@@ -1922,7 +1922,7 @@
 					"$(inherited)",
 					"ARCHPROPNAME='\"x86_64\"'",
 				);
-				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx11.1]" = (
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx*]" = (
 					"$(inherited)",
 					"ARCHPROPNAME='\"x86_64\"'",
 				);
@@ -2067,7 +2067,7 @@
 					"$(inherited)",
 					"ARCHPROPNAME='\"arm64\"'",
 				);
-				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx11.1]" = (
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx*]" = (
 					"$(inherited)",
 					"ARCHPROPNAME='\"arm64\"'",
 				);
@@ -2156,7 +2156,7 @@
 					"$(inherited)",
 					"ARCHPROPNAME='\"arm64\"'",
 				);
-				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx11.1]" = (
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx*]" = (
 					"$(inherited)",
 					"ARCHPROPNAME='\"arm64\"'",
 				);
