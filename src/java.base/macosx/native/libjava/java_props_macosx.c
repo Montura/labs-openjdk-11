@@ -26,12 +26,16 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <objc/objc-runtime.h>
 
-#include <Security/AuthSession.h>
 #include <CoreFoundation/CoreFoundation.h>
 #include <SystemConfiguration/SystemConfiguration.h>
 #include <Foundation/Foundation.h>
+#include <TargetConditionals.h>
+
+#if !(TARGET_OS_IPHONE)
+    #include <Security/AuthSession.h>
+    #include <objc/objc-runtime.h>
+#endif
 
 #include "java_props_macosx.h"
 
@@ -48,7 +52,7 @@ char *getPosixLocale(int cat) {
 #ifndef kCFCoreFoundationVersionNumber10_11_Max
 #define kCFCoreFoundationVersionNumber10_11_Max 1299
 #endif
-char *getMacOSXLocale(int cat) {
+char *getAppleLocale(int cat) {
     const char* retVal = NULL;
     char languageString[LOCALEIDLENGTH];
     char localeString[LOCALEIDLENGTH];
@@ -214,7 +218,7 @@ const char * convertToPOSIXLocale(const char* src) {
 }
 
 char *setupMacOSXLocale(int cat) {
-    char * ret = getMacOSXLocale(cat);
+    char * ret = getAppleLocale(cat);
 
     if (ret == NULL) {
         return getPosixLocale(cat);
@@ -223,6 +227,7 @@ char *setupMacOSXLocale(int cat) {
     }
 }
 
+#if !(TARGET_OS_IPHONE)
 int isInAquaSession() {
     // environment variable to bypass the aqua session check
     char *ev = getenv("AWT_FORCE_HEADFUL");
@@ -241,74 +246,17 @@ int isInAquaSession() {
     }
     return 0;
 }
-
-// 10.9 SDK does not include the NSOperatingSystemVersion struct.
-// For now, create our own
-typedef struct {
-        NSInteger majorVersion;
-        NSInteger minorVersion;
-        NSInteger patchVersion;
-} OSVerStruct;
+#endif
 
 void setOSNameAndVersion(java_props_t *sprops) {
-    // Hardcode os_name, and fill in os_version
-    sprops->os_name = strdup("Mac OS X");
-
-    char* osVersionCStr = NULL;
-    // Mac OS 10.9 includes the [NSProcessInfo operatingSystemVersion] function,
-    // but it's not in the 10.9 SDK.  So, call it via objc_msgSend_stret.
-    if ([[NSProcessInfo processInfo] respondsToSelector:@selector(operatingSystemVersion)]) {
-        OSVerStruct (*procInfoFn)(id rec, SEL sel) = (OSVerStruct(*)(id, SEL))objc_msgSend_stret;
-        OSVerStruct osVer = procInfoFn([NSProcessInfo processInfo],
-                                       @selector(operatingSystemVersion));
-        NSString *nsVerStr;
-        // Copy out the char* if running on version other than 10.16 Mac OS (10.16 == 11.x)
-        // or explicitly requesting version compatibility
-        if (!((long)osVer.majorVersion == 10 && (long)osVer.minorVersion >= 16) ||
-                (getenv("SYSTEM_VERSION_COMPAT") != NULL)) {
-            if (osVer.patchVersion == 0) { // Omit trailing ".0"
-                nsVerStr = [NSString stringWithFormat:@"%ld.%ld",
-                        (long)osVer.majorVersion, (long)osVer.minorVersion];
-            } else {
-                nsVerStr = [NSString stringWithFormat:@"%ld.%ld.%ld",
-                        (long)osVer.majorVersion, (long)osVer.minorVersion, (long)osVer.patchVersion];
-            }
-            // Copy out the char*
-            osVersionCStr = strdup([nsVerStr UTF8String]);
-        } else {
-            // Version 10.16, without explicit env setting of SYSTEM_VERSION_COMPAT
-            // AKA 11.x; compute the version number from the letter in the ProductBuildVersion
-            NSDictionary *version = [NSDictionary dictionaryWithContentsOfFile :
-                             @"/System/Library/CoreServices/SystemVersion.plist"];
-            if (version != NULL) {
-                NSString *nsBuildVerStr = [version objectForKey : @"ProductBuildVersion"];
-                if (nsBuildVerStr != NULL && nsBuildVerStr.length >= 3) {
-                    int letter = [nsBuildVerStr characterAtIndex:2];
-                    if (letter >= 'B' && letter <= 'Z') {
-                        int vers = letter - 'A' - 1;
-                        asprintf(&osVersionCStr, "11.%d", vers);
-                    }
-                }
-            }
-        }
-    }
-    // Fallback if running on pre-10.9 Mac OS
-    if (osVersionCStr == NULL) {
-        NSDictionary *version = [NSDictionary dictionaryWithContentsOfFile :
-                                 @"/System/Library/CoreServices/SystemVersion.plist"];
-        if (version != NULL) {
-            NSString *nsVerStr = [version objectForKey : @"ProductVersion"];
-            if (nsVerStr != NULL) {
-                osVersionCStr = strdup([nsVerStr UTF8String]);
-            }
-        }
-    }
-    if (osVersionCStr == NULL) {
-        osVersionCStr = strdup("Unknown");
-    }
-    sprops->os_version = osVersionCStr;
+#if TARGET_OS_IPHONE
+    sprops->os_name = "iOS";
+#else
+    sprops->os_name = "Mac OS X";
+#endif
+    NSString* version = [[NSProcessInfo processInfo] operatingSystemVersionString];
+    sprops->os_version = strdup([version UTF8String]);
 }
-
 
 static Boolean getProxyInfoForProtocol(CFDictionaryRef inDict, CFStringRef inEnabledKey,
                                        CFStringRef inHostKey, CFStringRef inPortKey,
@@ -436,6 +384,7 @@ void setUserHome(java_props_t *sprops) {
     [pool drain];
 }
 
+#if  !(TARGET_OS_IPHONE)
 /*
  * Method for fetching proxy info and storing it in the property list.
  */
@@ -516,3 +465,4 @@ void setProxyProperties(java_props_t *sProps) {
 
     CFRelease(dict);
 }
+#endif
