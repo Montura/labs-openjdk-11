@@ -1966,7 +1966,7 @@
 				CUSTOM_LIB_NAME = d;
 				"CUSTOM_LIB_NAME[sdk=iphoneos*]" = "ios-d";
 				"CUSTOM_LIB_NAME[sdk=iphonesimulator*]" = "ios-simulator-d";
-				"CUSTOM_LIB_NAME[sdk=macosx11.1]" = "mac-catalyst-d";
+				"CUSTOM_LIB_NAME[sdk=macosx*]" = "mac-catalyst-d";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"STATIC_BUILD=1",
@@ -1993,7 +1993,7 @@
 				CUSTOM_LIB_NAME = r;
 				"CUSTOM_LIB_NAME[sdk=iphoneos*]" = "ios-r";
 				"CUSTOM_LIB_NAME[sdk=iphonesimulator*]" = "ios-simulator-r";
-				"CUSTOM_LIB_NAME[sdk=macosx11.1]" = "mac-catalyst-r";
+				"CUSTOM_LIB_NAME[sdk=macosx*]" = "mac-catalyst-r";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"STATIC_BUILD=1",
